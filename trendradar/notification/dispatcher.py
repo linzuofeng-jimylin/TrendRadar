@@ -398,7 +398,7 @@ class NotificationDispatcher:
         display_regions: Optional[Dict] = None,
         standalone_data: Optional[Dict] = None,
     ) -> bool:
-        """发送到飞书（多账号，支持热榜+RSS合并+AI分析+独立展示区）"""
+        """发送到飞书（多账号，支持热榜+RSS合并+AI分析+独立展示区，支持签名验证）"""
         rd, ri, rn, ai, sd = self._apply_display_regions(
             report_data, display_regions, rss_items, rss_new_items, ai_analysis, standalone_data
         )
@@ -423,6 +423,7 @@ class NotificationDispatcher:
                 ai_analysis=ai,
                 display_regions=display_regions or {},
                 standalone_data=sd,
+                feishu_secret=self.config.get("FEISHU_SECRET"),
             ),
         )
 

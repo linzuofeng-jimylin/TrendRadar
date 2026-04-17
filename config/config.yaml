@@ -317,6 +317,7 @@ notification:
   channels:
     feishu:
       webhook_url: ""                 # 飞书机器人 webhook URL
+      secret: ""                      # 飞书机器人签名密钥（可选，留空则不带签名验证）
 
     dingtalk:
       webhook_url: ""                 # 钉钉机器人 webhook URL

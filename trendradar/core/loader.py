@@ -416,6 +416,7 @@ def _load_webhook_config(config_data: Dict) -> Dict:
     return {
         # 飞书
         "FEISHU_WEBHOOK_URL": _get_env_str("FEISHU_WEBHOOK_URL") or feishu.get("webhook_url", ""),
+        "FEISHU_SECRET": _get_env_str("FEISHU_SECRET") or feishu.get("secret", ""),
         # 钉钉
         "DINGTALK_WEBHOOK_URL": _get_env_str("DINGTALK_WEBHOOK_URL") or dingtalk.get("webhook_url", ""),
         # 企业微信
